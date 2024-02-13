@@ -2,13 +2,22 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Button from '../components/elements/button';
 const meta = {
-  title: 'Example/Button',
+  title: 'Components/Elements/Button',
   component: Button,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    label: {
+      control: 'text',
+      description: 'Overwritten description',
+    },
+    icon: {
+      options: ['Airplane', 'CheckCircle', 'Click', 'CrossSquare', 'Down', 'Figma', 'Github', 'Linkedin', 'Whatsapp'],
+      control: { type: 'radio' },
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -16,6 +25,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'Button',
+    label: 'Button',
   },
 };

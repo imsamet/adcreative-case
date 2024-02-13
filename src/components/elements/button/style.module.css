@@ -26,4 +26,7 @@
     border-[var(--border-red)]
     bg-[var(--red)];
   }
+  & .icon {
+    @apply w-[21px] h-[21px];
+  }
 }

@@ -1,16 +1,14 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styles from './style.module.css';
 import cn from 'classnames';
+import { Icons } from '../icons/icon';
+import { ButtonProps } from './_model';
 
-type Props = {
-  children: ReactNode;
-  className?: string;
-};
-
-const Button: React.FC<Props> = ({ children, className, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ label, icon, className, ...props }) => {
   return (
     <button className={cn(styles.button, className)} {...props}>
-      {children}
+      {label}
+      {icon && <Icons className={styles.icon} name={icon} />}
     </button>
   );
 };
