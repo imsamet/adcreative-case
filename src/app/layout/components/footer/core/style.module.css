@@ -1,0 +1,24 @@
+.footer {
+  @apply sticky top-full;
+}
+.top {
+  @apply bg-[var(--dark-purple)] px-[0] py-[30px];
+}
+.bottom {
+  @apply px-[0] py-[13px] bg-[var(--black)];
+}
+.box {
+  @apply flex justify-between items-center;
+}
+.logo {
+  @apply w-[60.6px] h-[57.6px];
+}
+.linkBox {
+  @apply flex flex-row justify-center items-center gap-[52px] h-[fit-content];
+  & svg {
+    @apply text-[var(--border-purple)] w-[36px] h-[36px];
+  }
+}
+.bottomLink {
+  @apply text-xs [font-stretch:normal] not-italic no-underline text-[var(--white)];
+}
