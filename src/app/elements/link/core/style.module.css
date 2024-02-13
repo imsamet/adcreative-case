@@ -1,0 +1,3 @@
+.link {
+  @apply text-base font-semibold [font-stretch:normal] not-italic leading-[2.5] text-left text-[#000] no-underline;
+}
