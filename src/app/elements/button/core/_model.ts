@@ -1,4 +1,4 @@
-import { IconNames } from '../icons/_models';
+import { IconNames } from '../../icons/core/_models';
 
 export type ButtonProps = {
   label: string;

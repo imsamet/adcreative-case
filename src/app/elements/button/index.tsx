@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './style.module.css';
 import cn from 'classnames';
 import { Icons } from '../icons/icon';
-import { ButtonProps } from './_model';
+import { ButtonProps } from './core/_model';
 
 const Button: React.FC<ButtonProps> = ({ label, icon, className, ...props }) => {
   return (

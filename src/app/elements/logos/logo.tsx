@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Logo from './index.ts';
-import { LogoProps } from './_models.ts';
+import { LogoProps } from './core/_models.ts';
 
 export const Logos: React.FC<LogoProps> = ({ name, className }) => {
   switch (name) {

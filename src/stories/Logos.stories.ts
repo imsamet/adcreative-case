@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Logos } from '../components/elements/logos/logo.tsx';
+import { Logos } from '../app/elements/logos/logo.tsx';
 const meta = {
   title: 'Components/Elements/Logos',
   component: Logos,
