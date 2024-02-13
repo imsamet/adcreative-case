@@ -1,0 +1,9 @@
+export { default as Airplane } from './Airplane';
+export { default as CheckCircle } from './CheckCircle';
+export { default as Click } from './Click';
+export { default as CrossSquare } from './CrossSquare';
+export { default as Down } from './Down';
+export { default as Figma } from './Figma';
+export { default as Github } from './Github';
+export { default as Linkedin } from './Linkedin';
+export { default as Whatsapp } from './Whatsapp';

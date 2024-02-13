@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "svgr": "svgr public/icons -d src/components/icons --icon --replace-attr-values \"#000=currentColor=\""
+    "svgr": "svgr public/icon -d src/components/elements/icons --icon --typescript --replace-attr-values \"#000=currentColor=\""
   },
   "dependencies": {
     "classnames": "^2.5.1",
