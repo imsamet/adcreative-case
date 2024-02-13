@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Button from '../app/elements/button';
 const meta = {
-  title: 'Components/Elements/Button',
+  title: 'App/Elements/Button',
   component: Button,
   parameters: {
     layout: 'centered',
@@ -23,7 +23,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Component: Story = {
   args: {
     label: 'Button',
   },

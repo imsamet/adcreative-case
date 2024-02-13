@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.module.css';
+import styles from './core/style.module.css';
 import cn from 'classnames';
 import { Icons } from '../icons/icon';
 import { Props } from './core/_model';
