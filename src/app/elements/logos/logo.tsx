@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Logo from './index.ts';
-import { LogoProps } from './core/_models.ts';
+import { Props } from './core/_models.ts';
 
-export const Logos: React.FC<LogoProps> = ({ name, className }) => {
+export const Logos: React.FC<Props> = ({ name, className }) => {
   switch (name) {
     case 'AdCreativeLogo':
       return <Logo.AdCreativeLogo className={className} />;

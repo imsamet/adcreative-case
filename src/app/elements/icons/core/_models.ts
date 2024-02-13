@@ -8,7 +8,7 @@ export type IconNames =
   | 'Github'
   | 'Linkedin'
   | 'Whatsapp';
-export type IconsProps = {
+export type Props = {
   name: IconNames;
   className?: string;
 };

@@ -1,6 +1,6 @@
 export type LogoNames = 'AdCreativeLogo' | 'AdCreativeText' | 'AdCreative';
 
-export type LogoProps = {
+export type Props = {
   name: LogoNames;
   className?: string;
 };

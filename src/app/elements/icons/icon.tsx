@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Icon from './index.ts';
-import { IconsProps } from './core/_models.ts';
+import { Props } from './core/_models.ts';
 
-export const Icons: React.FC<IconsProps> = ({ name, className }) => {
+export const Icons: React.FC<Props> = ({ name, className }) => {
   switch (name) {
     case 'Airplane':
       return <Icon.Airplane className={className} />;
