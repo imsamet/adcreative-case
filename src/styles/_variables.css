@@ -1,12 +1,22 @@
 :root {
-  --font-default: Graphik, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-secondary: '';
+  --font-default: 'Inter', sans-serif;
   --delay: 0.4s;
+
+  /* Colors */
+  --purple: #3b2a82;
+  --border-purple: #7762ce;
+  --dark-purple: #181231;
+  --shadow-purple: #5014ad40;
+
+  --red: #ff3067;
+  --red-border: #ff7298;
+  --shadow-red: #ff306740;
+
+  --autocomplate: #94a3b8;
+  --dark-autocomplate: #334155;
+
   --black: #000;
   --white: #fff;
-  --blue: #1a5ed4;
-  --dark-blue: #041d2c;
+
   --error: #d41a1a;
-  --soft-grey: #d9d9d9;
-  --grey: #9ba5ab;
 }

@@ -3,4 +3,10 @@
     transition: var(--delay);
     transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
   }
+  .purple-shadow {
+    box-shadow: 0 15px 45px 0 var(--shadow-purple);
+  }
+  .red-shadow {
+    box-shadow: 0 15px 45px 0 var(--shadow-red);
+  }
 }

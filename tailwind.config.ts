@@ -35,4 +35,5 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
+  important: false,
 };
