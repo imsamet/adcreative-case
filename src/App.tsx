@@ -1,11 +1,16 @@
-import Button from './button';
+import React, { ReactNode } from 'react';
+import Layout from './app/layout';
+import { Outlet } from 'react-router-dom';
 
-function App() {
+type Props = {
+  children?: ReactNode;
+};
+const App: React.FC<Props> = ({}) => {
   return (
-    <>
-      <Button type="primary">button</Button>
-    </>
+    <Layout>
+      <Outlet />
+    </Layout>
   );
-}
+};
 
 export default App;
