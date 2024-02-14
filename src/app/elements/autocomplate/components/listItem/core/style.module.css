@@ -1,0 +1,44 @@
+.container {
+  @apply flex
+    flex-row
+    justify-start
+    items-center
+    gap-[9px]
+    p-[10px]
+    [border-bottom:solid_1px_var(--autocomplate)]
+    bg-[#f5f7f9]
+    cursor-pointer;
+  &:last-child {
+    @apply border-none;
+  }
+}
+.image {
+  @apply w-[36px]
+  h-[36px]
+  rounded-[6px];
+}
+.textBox {
+  @apply flex
+    flex-col 
+    gap-[2px];
+}
+.name {
+  @apply text-[15px]
+  font-medium
+  [font-stretch:normal]
+  not-italic
+  tracking-[0.15px]
+  text-left
+  text-[var(--dark-autocomplate)];
+}
+.episode {
+  @apply text-[13px]
+  font-medium
+  [font-stretch:normal]
+  not-italic
+  text-left
+  text-[var(--autocomplate)];
+}
+.input {
+  @apply cursor-pointer;
+}
