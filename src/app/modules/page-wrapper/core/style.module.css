@@ -1,0 +1,6 @@
+.content {
+  @apply flex
+  justify-center
+  pb-10
+  pt-10;
+}
