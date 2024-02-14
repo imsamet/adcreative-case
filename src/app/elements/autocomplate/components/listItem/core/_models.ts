@@ -3,6 +3,4 @@ export type Props = {
   image: string;
   name: string;
   episodes: number;
-  checked: boolean;
-  onClick: Function;
 };
