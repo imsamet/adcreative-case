@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "svgr": "svgr public/icon -d src/components/elements/icons --icon --typescript --replace-attr-values \"#000=currentColor=\"",
-    "logo": "svgr public/logo -d src/components/elements/logos --icon --typescript"
+    "svgr": "svgr src/assets/icon -d src/components/elements/icons --icon --typescript --replace-attr-values \"#000=currentColor=\"",
+    "logo": "svgr src/assets/logo -d src/components/elements/logos --icon --typescript"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.0",
