@@ -1,5 +1,5 @@
 import React from 'react';
-import { WithChildren } from '../../../constants/_models';
+import { WithChildren } from '../../../core/_models';
 import styles from './core/style.module.css';
 
 const PageWrapper: React.FC<WithChildren> = ({ children }) => {

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { ApiQueryResponse, ResponseData } from '../../../../../constants/_models';
+import { ApiQueryResponse, ResponseData } from '../../../../../core/_models';
 import getRickAndMortyList from '../actions/getRickAndMortyList';
 
 export interface RickAndMortyState {

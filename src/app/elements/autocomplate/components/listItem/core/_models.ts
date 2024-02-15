@@ -1,4 +1,4 @@
-import { ResponseData } from '../../../../../../constants/_models';
+import { ResponseData } from '../../../../../../core/_models';
 
 export type Props = {
   item: ResponseData;

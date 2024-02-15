@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { ApiQueryResponse } from '../../../../constants/_models';
+import { ApiQueryResponse } from '../../../../core/_models';
 
 const API_URL = import.meta.env.VITE_APP_THEME_API_URL;
 const GET_RICK_AND_MORTY_URL = `${API_URL}/character`;
