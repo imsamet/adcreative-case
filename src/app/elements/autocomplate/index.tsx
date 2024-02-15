@@ -3,7 +3,7 @@ import styles from './core/style.module.css';
 import cn from 'classnames';
 import SelectItem from './components/selectItem';
 import { Icons } from '../icons/icon';
-import { useAppSelector } from '../../modules/rick-and-morty/core/hooks';
+import { useAppSelector } from '../../../hooks/useRedux';
 import SearchInput from './components/searchInput';
 import List from './components/list';
 

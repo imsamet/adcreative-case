@@ -2,8 +2,8 @@ import React from 'react';
 import { Icons } from '../../../icons/icon';
 import { Props } from './core/_models';
 import styles from './core/style.module.css';
-import { useAppDispatch } from '../../../../modules/rick-and-morty/core/hooks';
-import { removeSelect } from '../../../../modules/rick-and-morty/core/reducer/rickAndMortySlice';
+import { useAppDispatch } from '../../../../../hooks/useRedux';
+import { removeSelect } from '../../../../../store/reducer/rickAndMortySlice';
 
 const SelectItem: React.FC<Props> = ({ id, label }) => {
   const dispatch = useAppDispatch();

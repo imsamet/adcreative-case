@@ -1,11 +1,9 @@
-import { Provider } from 'react-redux';
 import Autocomplate from '../../elements/autocomplate';
-import { store } from './core/store';
 import { useEffect } from 'react';
-import getRickAndMortyList from './core/actions/getRickAndMortyList';
-import { useAppDispatch } from './core/hooks';
+import getRickAndMortyList from '../../../store/actions/getRickAndMortyList';
+import { useAppDispatch } from '../../../hooks/useRedux';
 
-const RickAndMortyList = () => {
+const RickAndMortyWrapper = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getRickAndMortyList(''));
@@ -16,11 +14,5 @@ const RickAndMortyList = () => {
     </>
   );
 };
-
-const RickAndMortyWrapper = () => (
-  <Provider store={store}>
-    <RickAndMortyList />;
-  </Provider>
-);
 
 export { RickAndMortyWrapper };

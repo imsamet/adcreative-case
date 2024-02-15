@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useCallback } from 'react';
 import styles from './core/style.module.css';
 import lodash from 'lodash';
-import { useAppDispatch } from '../../../../modules/rick-and-morty/core/hooks';
-import { setDebouncedLoading, setQuery } from '../../../../modules/rick-and-morty/core/reducer/rickAndMortySlice';
-import getRickAndMortyList from '../../../../modules/rick-and-morty/core/actions/getRickAndMortyList';
+import { useAppDispatch } from '../../../../../hooks/useRedux';
+import { setDebouncedLoading, setQuery } from '../../../../../store/reducer/rickAndMortySlice';
+import getRickAndMortyList from '../../../../../store/actions/getRickAndMortyList';
 
 const SearchInput: React.FC = ({}) => {
   const dispatch = useAppDispatch();

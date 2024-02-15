@@ -1,8 +1,8 @@
 import React from 'react';
 import { Props } from './core/_models';
 import styles from './core/style.module.css';
-import { useAppDispatch, useAppSelector } from '../../../../modules/rick-and-morty/core/hooks';
-import { onSelect } from '../../../../modules/rick-and-morty/core/reducer/rickAndMortySlice';
+import { useAppDispatch, useAppSelector } from '../../../../../hooks/useRedux';
+import { onSelect } from '../../../../../store/reducer/rickAndMortySlice';
 
 const ListItem: React.FC<Props> = ({ item }) => {
   const { selected, query } = useAppSelector(state => state.rickAndMorty);

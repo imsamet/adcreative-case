@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './core/style.module.css';
-import { useAppDispatch, useAppSelector } from '../../../../modules/rick-and-morty/core/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../../hooks/useRedux';
 import usePageQueryParam from '../../../../../hooks/usePageQueryParam';
-import getRickAndMortyListNextPage from '../../../../modules/rick-and-morty/core/actions/getRickAndMortyListNextPage';
+import getRickAndMortyListNextPage from '../../../../../store/actions/getRickAndMortyListNextPage';
 import Loading from '../loading';
 import ListItem from '../listItem';
 import NotFound from '../notFound';

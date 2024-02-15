@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getRickAndMorty } from '../_requests';
+import { getRickAndMorty } from '../core/_requests';
 
 const getRickAndMortyListNextPage = createAsyncThunk(
   'rickAndMorty/listNextPage',

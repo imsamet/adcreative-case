@@ -1,16 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { ApiQueryResponse, ResponseData } from '../../../../../core/_models';
+import { ResponseData } from '../../core/_models';
 import getRickAndMortyList from '../actions/getRickAndMortyList';
 import getRickAndMortyListNextPage from '../actions/getRickAndMortyListNextPage';
-
-export interface RickAndMortyState {
-  rickAndMortyList: ApiQueryResponse | null;
-  selected: ResponseData[];
-  query: string;
-  isLoading: boolean;
-  error: Error | null;
-}
+import { RickAndMortyState } from '../core/_models';
 
 const initialState: RickAndMortyState = {
   rickAndMortyList: null,
