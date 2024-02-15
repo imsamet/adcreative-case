@@ -5,7 +5,7 @@ import Footer from './components/footer';
 
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <main style={{ minHeight: '100vh', backgroundImage: `url('/bg.webp')` }}>
+    <main style={{ minHeight: '100vh', backgroundImage: `url('/bg.webp')`, paddingTop: 100 }}>
       <Navigation />
       {children}
       <Footer />

@@ -4,4 +4,6 @@
   items-center
   pb-10
   pt-10;
+  box-sizing: border-box;
+  min-height: 700px;
 }
