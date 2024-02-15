@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, DetailedHTMLProps, HTMLAttributes, UIEvent } from 'react';
 import styles from './core/style.module.css';
 import cn from 'classnames';
 import SelectItem from './components/selectItem';
@@ -9,6 +9,8 @@ import { useAppDispatch, useAppSelector } from '../../modules/rick-and-morty/cor
 import { setQuery } from '../../modules/rick-and-morty/core/reducer/rickAndMortySlice';
 import getRickAndMortyList from '../../modules/rick-and-morty/core/actions/getRickAndMortyList';
 import NotFound from './components/notFound';
+import getRickAndMortyListNextPage from '../../modules/rick-and-morty/core/actions/getRickAndMortyListNextPage';
+import usePageQueryParam from '../../../hooks/usePageQueryParam';
 
 const Autocomplate: React.FC = ({}) => {
   const state = useAppSelector(state => state.rickAndMorty);
@@ -32,6 +34,14 @@ const Autocomplate: React.FC = ({}) => {
       </>
     );
   };
+  const handleScroll = (e: any) => {
+    if (state.rickAndMortyList?.info.next) {
+      const { scrollTop, clientHeight, scrollHeight } = e.target;
+      const page = usePageQueryParam(state.rickAndMortyList.info.next);
+      scrollHeight - (scrollTop + clientHeight) == 0 &&
+        dispatch(getRickAndMortyListNextPage({ name: state.query, page }));
+    }
+  };
   return (
     <div className={cn(styles.container)}>
       <div className={styles.head}>
@@ -43,7 +53,7 @@ const Autocomplate: React.FC = ({}) => {
         </div>
         <Icons className={styles.icon} name="Down" />
       </div>
-      <div className={styles.body}>
+      <div className={styles.body} onScroll={handleScroll}>
         <Loading isLoading={state.isLoading} />
         {
           //state.rickAndMortyList ? SelectsListRender() : <NotFound />

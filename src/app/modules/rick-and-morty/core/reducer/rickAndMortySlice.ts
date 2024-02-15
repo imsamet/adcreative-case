@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { ApiQueryResponse, ResponseData } from '../../../../../core/_models';
 import getRickAndMortyList from '../actions/getRickAndMortyList';
+import getRickAndMortyListNextPage from '../actions/getRickAndMortyListNextPage';
 
 export interface RickAndMortyState {
   rickAndMortyList: ApiQueryResponse | null;
@@ -46,6 +47,21 @@ export const rickAndMortySlice = createSlice({
     builder.addCase(getRickAndMortyList.rejected, (state, action) => {
       state.isLoading = false;
       state.rickAndMortyList = null;
+      state.error = action.payload;
+    });
+    builder.addCase(getRickAndMortyListNextPage.pending, state => {
+      state.isLoading = true;
+    });
+    builder.addCase(getRickAndMortyListNextPage.fulfilled, (state, action) => {
+      state.rickAndMortyList?.results &&
+        (state.rickAndMortyList = {
+          info: action.payload.info,
+          results: [...state.rickAndMortyList.results, ...action.payload.results],
+        });
+      state.isLoading = false;
+    });
+    builder.addCase(getRickAndMortyListNextPage.rejected, (state, action) => {
+      state.isLoading = false;
       state.error = action.payload;
     });
   },
