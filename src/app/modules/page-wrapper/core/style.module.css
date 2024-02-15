@@ -1,6 +1,7 @@
 .content {
   @apply flex
-  justify-center
+  flex-col
+  items-center
   pb-10
   pt-10;
 }
