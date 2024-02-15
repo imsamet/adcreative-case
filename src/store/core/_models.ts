@@ -5,5 +5,5 @@ export interface RickAndMortyState {
   selected: ResponseData[];
   query: string;
   isLoading: boolean;
-  error: Error | null;
+  error: any;
 }
