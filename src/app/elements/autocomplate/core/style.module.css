@@ -9,19 +9,6 @@
 .selectList {
   @apply flex flex-row justify-start items-center gap-[4px] flex-wrap w-full;
 }
-.input {
-  @apply border-none outline-[none] text-[15px] font-semibold [font-stretch:normal] not-italic text-left text-[var(--dark-autocomplate)] w-[150px];
-  outline: none;
-}
 .icon {
   @apply w-[24px] h-[24px] text-[var(--autocomplate)] cursor-pointer self-center;
-}
-.body {
-  position: relative;
-  border-radius: 14px;
-  border: solid 1px #94a3b8;
-  width: 100%;
-  max-height: 436px;
-  overflow-y: scroll;
-  box-sizing: border-box;
 }

@@ -35,6 +35,9 @@ export const rickAndMortySlice = createSlice({
     setQuery: (state, action: PayloadAction<string>) => {
       state.query = action.payload;
     },
+    setDebouncedLoading: state => {
+      state.isLoading = true;
+    },
   },
   extraReducers: builder => {
     builder.addCase(getRickAndMortyList.pending, state => {
@@ -67,5 +70,5 @@ export const rickAndMortySlice = createSlice({
   },
 });
 
-export const { onSelect, removeSelect, setQuery } = rickAndMortySlice.actions;
+export const { onSelect, removeSelect, setQuery, setDebouncedLoading } = rickAndMortySlice.actions;
 export default rickAndMortySlice.reducer;
