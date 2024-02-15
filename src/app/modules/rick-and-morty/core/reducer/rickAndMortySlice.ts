@@ -25,11 +25,11 @@ export const rickAndMortySlice = createSlice({
   reducers: {
     onSelect: (state, action: PayloadAction<ResponseData>) => {
       state.selected.some(i => i.id === action.payload.id)
-        ? state.selected.filter(i => !(i.id === action.payload.id))
+        ? (state.selected = state.selected.filter(i => !(i.id === action.payload.id)))
         : state.selected.push(action.payload);
     },
     removeSelect: (state, action: PayloadAction<number>) => {
-      state.selected.filter(i => i.id !== action.payload);
+      state.selected = state.selected.filter(i => i.id !== action.payload);
     },
     setQuery: (state, action: PayloadAction<string>) => {
       state.query = action.payload;
