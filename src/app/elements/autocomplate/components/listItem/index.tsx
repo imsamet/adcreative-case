@@ -1,17 +1,44 @@
 import React from 'react';
 import { Props } from './core/_models';
 import styles from './core/style.module.css';
-import { useListView } from '../../../../modules/rick-and-morty/core/ListViewProvider';
+import { useAppDispatch, useAppSelector } from '../../../../modules/rick-and-morty/core/hooks';
+import { onSelect } from '../../../../modules/rick-and-morty/core/reducer/rickAndMortySlice';
 
-const ListItem: React.FC<Props> = ({ id, name, image, episodes }) => {
-  const { selected, removeSelect } = useListView();
+const ListItem: React.FC<Props> = ({ item }) => {
+  const { selected, query } = useAppSelector(state => state.rickAndMorty);
+  const dispatch = useAppDispatch();
+  const handleClickToggleItem = () => {
+    dispatch(onSelect(item));
+  };
+  const BoldRender = () => {
+    if (query !== '') {
+      const str = item.name;
+      const replaceValue = '|';
+      const rep = str.toLocaleLowerCase().replaceAll(query.toLocaleLowerCase(), replaceValue);
+      const arr = rep.split('');
+      let lastIndex: number = 0;
+      return arr.map((element: string) => {
+        const nextLength = element === replaceValue ? query.length : 1;
+        const val =
+          element === replaceValue ? (
+            <span className={styles.bold}>{str.slice(lastIndex, lastIndex + nextLength)}</span>
+          ) : (
+            <>{str.slice(lastIndex, lastIndex + nextLength)}</>
+          );
+        lastIndex = lastIndex + nextLength;
+        return val;
+      });
+    } else {
+      return item.name;
+    }
+  };
   return (
-    <div onClick={() => removeSelect(id)} className={styles.container}>
-      <input className={styles.input} type="checkbox" checked={selected.some(i => id === i.id)} />
-      <img src={image} className={styles.image} />
+    <div onClick={handleClickToggleItem} className={styles.container}>
+      <input className={styles.input} type="checkbox" checked={selected.some(i => item.id === i.id)} />
+      <img src={item.image} className={styles.image} />
       <div className={styles.textBox}>
-        <span className={styles.name}>{name}</span>
-        <span className={styles.episode}>{episodes} Episodes</span>
+        <span className={styles.name}>{BoldRender()}</span>
+        <span className={styles.episode}>{item.episode.length} Episodes</span>
       </div>
     </div>
   );

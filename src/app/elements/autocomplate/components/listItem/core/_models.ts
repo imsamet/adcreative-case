@@ -1,6 +1,5 @@
+import { ResponseData } from '../../../../../../constants/_models';
+
 export type Props = {
-  id: number;
-  image: string;
-  name: string;
-  episodes: number;
+  item: ResponseData;
 };

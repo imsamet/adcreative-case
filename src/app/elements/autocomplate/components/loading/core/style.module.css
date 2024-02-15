@@ -9,6 +9,7 @@
   backdrop-filter: blur(2px);
   position: absolute;
   bottom: 0;
+  height: 100%;
 }
 
 .loadingWrapper {

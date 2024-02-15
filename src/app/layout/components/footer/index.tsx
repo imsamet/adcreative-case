@@ -31,7 +31,9 @@ const Footer: React.FC<Props> = ({}) => {
                   {i.label}
                 </a>
               ) : (
-                <span className={styles.bottomLink}>{i.label}</span>
+                <span key={i.id} className={styles.bottomLink}>
+                  {i.label}
+                </span>
               ),
             )}
           </div>

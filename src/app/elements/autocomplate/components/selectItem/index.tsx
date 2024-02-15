@@ -2,14 +2,18 @@ import React from 'react';
 import { Icons } from '../../../icons/icon';
 import { Props } from './core/_models';
 import styles from './core/style.module.css';
-import { useListView } from '../../../../modules/rick-and-morty/core/ListViewProvider';
+import { useAppDispatch } from '../../../../modules/rick-and-morty/core/hooks';
+import { removeSelect } from '../../../../modules/rick-and-morty/core/reducer/rickAndMortySlice';
 
 const SelectItem: React.FC<Props> = ({ id, label }) => {
-  const { removeSelect } = useListView();
+  const dispatch = useAppDispatch();
+  const handleRemoveItem = () => {
+    dispatch(removeSelect(id));
+  };
   return (
     <div className={styles.container}>
       <span className={styles.text}>{label}</span>
-      <div className={styles.iconBox} onClick={() => removeSelect(id)}>
+      <div className={styles.iconBox} onClick={handleRemoveItem}>
         <Icons className={styles.icon} name="CrossSquare" />
       </div>
     </div>

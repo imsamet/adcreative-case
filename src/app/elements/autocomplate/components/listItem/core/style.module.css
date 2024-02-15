@@ -31,6 +31,9 @@
   text-left
   text-[var(--dark-autocomplate)];
 }
+.bold {
+  font-weight: 800;
+}
 .episode {
   @apply text-[13px]
   font-medium
