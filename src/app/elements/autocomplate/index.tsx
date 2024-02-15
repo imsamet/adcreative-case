@@ -18,6 +18,20 @@ const Autocomplate: React.FC = ({}) => {
     dispatch(setQuery(e.target.value));
     dispatch(getRickAndMortyList(e.target.value));
   };
+  const SelectsListRender = () => {
+    return (
+      <>
+        {state.selected.map(i => (
+          <ListItem key={i.id} item={i} />
+        ))}
+        {state.rickAndMortyList?.results
+          .filter(i => !state.selected.some(s => s.id === i.id))
+          .map(i => (
+            <ListItem key={i.id} item={i} />
+          ))}
+      </>
+    );
+  };
   return (
     <div className={cn(styles.container)}>
       <div className={styles.head}>
@@ -31,6 +45,9 @@ const Autocomplate: React.FC = ({}) => {
       </div>
       <div className={styles.body}>
         <Loading isLoading={state.isLoading} />
+        {
+          //state.rickAndMortyList ? SelectsListRender() : <NotFound />
+        }
         {state.rickAndMortyList ? (
           state.rickAndMortyList?.results.map(i => <ListItem key={i.id} item={i} />)
         ) : (
