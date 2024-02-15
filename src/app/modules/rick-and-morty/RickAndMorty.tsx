@@ -1,7 +1,15 @@
+import { Provider } from 'react-redux';
 import Autocomplate from '../../elements/autocomplate';
-import { ListViewProvider } from './core/ListViewProvider';
+import { store } from './core/store';
+import { useEffect } from 'react';
+import getRickAndMortyList from './core/actions/getRickAndMortyList';
+import { useAppDispatch } from './core/hooks';
 
 const RickAndMortyList = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getRickAndMortyList(''));
+  }, []);
   return (
     <>
       <Autocomplate />
@@ -10,9 +18,9 @@ const RickAndMortyList = () => {
 };
 
 const RickAndMortyWrapper = () => (
-  <ListViewProvider>
-    <RickAndMortyList />
-  </ListViewProvider>
+  <Provider store={store}>
+    <RickAndMortyList />;
+  </Provider>
 );
 
 export { RickAndMortyWrapper };

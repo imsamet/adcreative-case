@@ -2,9 +2,9 @@ import axios, { AxiosResponse } from 'axios';
 import { ApiQueryResponse } from '../../../../constants/_models';
 
 const API_URL = import.meta.env.VITE_APP_THEME_API_URL;
-const GET_RICK_AND_MORTY_URL = `${API_URL}/character/?name=ric`;
+const GET_RICK_AND_MORTY_URL = `${API_URL}/character`;
 
-const getRickAndMorty = (name: string): Promise<ApiQueryResponse> => {
+export const getRickAndMorty = (name: string): Promise<ApiQueryResponse> => {
   return axios
     .get(GET_RICK_AND_MORTY_URL, {
       headers: {},
@@ -14,5 +14,3 @@ const getRickAndMorty = (name: string): Promise<ApiQueryResponse> => {
     })
     .then((d: AxiosResponse<ApiQueryResponse>) => d.data);
 };
-
-export { getRickAndMorty };
