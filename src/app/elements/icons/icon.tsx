@@ -31,6 +31,9 @@ export const Icons: React.FC<Props> = ({ name, className }) => {
     case 'Whatsapp':
       return <Icon.Whatsapp className={className} />;
       break;
+    case 'BurgerMenu':
+      return <Icon.BurgerMenu className={className} />;
+      break;
     default:
       return <>Icon</>;
       break;

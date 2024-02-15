@@ -1,4 +1,5 @@
 export { default as Airplane } from './Airplane';
+export { default as BurgerMenu } from './BurgerMenu';
 export { default as CheckCircle } from './CheckCircle';
 export { default as Click } from './Click';
 export { default as CrossSquare } from './CrossSquare';

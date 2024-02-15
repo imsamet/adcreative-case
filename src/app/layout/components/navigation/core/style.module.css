@@ -7,19 +7,62 @@
   width: 100%;
   top: 0;
   z-index: 10;
+  @media (--max-lg) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--delay);
+    left: 100%;
+    &.open {
+      left: 0%;
+    }
+  }
 }
 .content {
   @apply flex
   flex-row
   justify-between
   items-center;
+  @media (--max-lg) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
 }
 .logo {
   @apply h-[68px] w-[148px];
 }
 .linkBox {
   @apply flex flex-row justify-start items-start gap-[40px];
+  @media (--max-lg) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
 .buttonBox {
   @apply flex flex-row justify-center items-center gap-[24px];
+  @media (--max-lg) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.burgerMenu,
+.closeMenu {
+  display: none;
+  @media (--max-lg) {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: var(--dark-purple);
+  }
+  svg {
+    width: 36px;
+    height: 36px;
+  }
 }

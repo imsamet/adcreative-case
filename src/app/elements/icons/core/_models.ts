@@ -7,7 +7,8 @@ export type IconNames =
   | 'Figma'
   | 'Github'
   | 'Linkedin'
-  | 'Whatsapp';
+  | 'Whatsapp'
+  | 'BurgerMenu';
 export type Props = {
   name: IconNames;
   className?: string;
