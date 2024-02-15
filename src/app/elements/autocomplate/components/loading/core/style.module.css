@@ -7,7 +7,8 @@
   height: 436px;
   border-radius: 14px;
   backdrop-filter: blur(2px);
-  position: absolute;
+  position: sticky;
+  top: 0;
   bottom: 0;
   height: 100%;
 }
