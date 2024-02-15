@@ -3,12 +3,14 @@
 */
 .container {
   @apply mx-auto 
-  px-4;
+  px-4
+  box-border;
 }
 .row {
   @apply flex
   flex-wrap
-  -mx-4;
+  -mx-4
+  box-border;
   &.start {
     @apply justify-start;
   }
@@ -124,7 +126,7 @@
 .col-3xl-10,
 .col-3xl-11,
 .col-3xl-12 {
-  @apply px-4;
+  @apply px-4 box-border;
 }
 
 /* Default Screen */

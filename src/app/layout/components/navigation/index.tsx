@@ -15,7 +15,7 @@ const Navigation: React.FC<Props> = ({}) => {
 
           <div className={styles.linkBox}>
             <ADLink label="Home" to="/" />
-            <ADLink label="Storybook" to="/storybook" />
+            <ADLink label="Dependencies" to="/dependencies" />
           </div>
 
           <div className={styles.buttonBox}>
