@@ -4,8 +4,9 @@ import lodash from 'lodash';
 import { useAppDispatch } from '../../../../../hooks/useRedux';
 import { setDebouncedLoading, setQuery } from '../../../../../store/reducer/rickAndMortySlice';
 import getRickAndMortyList from '../../../../../store/actions/getRickAndMortyList';
+import { Props } from './core/_models';
 
-const SearchInput: React.FC = ({}) => {
+const SearchInput: React.FC<Props> = ({ setOpen }) => {
   const dispatch = useAppDispatch();
 
   const debouncedSave = useCallback(
@@ -16,6 +17,7 @@ const SearchInput: React.FC = ({}) => {
     [],
   );
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setOpen(true);
     dispatch(setDebouncedLoading());
     debouncedSave(e.target.value);
   };

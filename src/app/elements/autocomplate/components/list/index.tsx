@@ -6,8 +6,10 @@ import getRickAndMortyListNextPage from '../../../../../store/actions/getRickAnd
 import Loading from '../loading';
 import ListItem from '../listItem';
 import NotFound from '../notFound';
+import { Props } from './core/_models';
+import cn from 'classnames';
 
-const List: React.FC = ({}) => {
+const List: React.FC<Props> = ({ isOpen }) => {
   const state = useAppSelector(state => state.rickAndMorty);
   const dispatch = useAppDispatch();
   const handleScroll = (e: any) => {
@@ -18,22 +20,22 @@ const List: React.FC = ({}) => {
         dispatch(getRickAndMortyListNextPage({ name: state.query, page }));
     }
   };
-  const SelectsListRender = () => {
-    return (
-      <>
-        {state.selected.map(i => (
-          <ListItem key={i.id} item={i} />
-        ))}
-        {state.rickAndMortyList?.results
-          .filter(i => !state.selected.some(s => s.id === i.id))
-          .map(i => (
-            <ListItem key={i.id} item={i} />
-          ))}
-      </>
-    );
-  };
+  // const SelectsListRender = () => {
+  //   return (
+  //     <>
+  //       {state.selected.map(i => (
+  //         <ListItem key={i.id} item={i} />
+  //       ))}
+  //       {state.rickAndMortyList?.results
+  //         .filter(i => !state.selected.some(s => s.id === i.id))
+  //         .map(i => (
+  //           <ListItem key={i.id} item={i} />
+  //         ))}
+  //     </>
+  //   );
+  // };
   return (
-    <div className={styles.body} onScroll={handleScroll}>
+    <div className={cn(styles.body, isOpen && styles.open)} onScroll={handleScroll}>
       <Loading isLoading={state.isLoading} />
       {
         //state.rickAndMortyList ? SelectsListRender() : <NotFound />

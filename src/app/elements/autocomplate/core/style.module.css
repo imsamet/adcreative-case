@@ -9,6 +9,13 @@
 .selectList {
   @apply flex flex-row justify-start items-center gap-[4px] flex-wrap w-full;
 }
+.toggleButton {
+  @apply cursor-pointer w-[24px] h-[24px] self-center;
+}
 .icon {
-  @apply w-[24px] h-[24px] text-[var(--autocomplate)] cursor-pointer self-center;
+  @apply w-[24px] h-[24px] text-[var(--autocomplate)];
+  transition: var(--delay);
+}
+.open {
+  transform: rotateZ(180deg);
 }

@@ -1,4 +1,4 @@
 .input {
-  @apply border-none outline-[none] text-[15px] font-semibold [font-stretch:normal] not-italic text-left text-[var(--dark-autocomplate)] w-[150px];
+  @apply border-none outline-[none] text-[15px] font-semibold [font-stretch:normal] not-italic text-left text-[var(--dark-autocomplate)] w-full;
   outline: none;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './core/style.module.css';
 import cn from 'classnames';
 import SelectItem from './components/selectItem';
@@ -9,6 +9,10 @@ import List from './components/list';
 
 const Autocomplate: React.FC = ({}) => {
   const state = useAppSelector(state => state.rickAndMorty);
+  const [isOpen, setOpen] = useState<boolean>(false);
+  const toggle = () => {
+    setOpen(prev => !prev);
+  };
   return (
     <div className={cn(styles.container)}>
       <div className={styles.head}>
@@ -16,11 +20,13 @@ const Autocomplate: React.FC = ({}) => {
           {state.selected.map(i => (
             <SelectItem key={i.id} id={i.id} label={i.name} />
           ))}
-          <SearchInput />
+          <SearchInput setOpen={setOpen} />
         </div>
-        <Icons className={styles.icon} name="Down" />
+        <div className={styles.toggleButton} onClick={toggle}>
+          <Icons className={cn(styles.icon, isOpen && styles.open)} name="Down" />
+        </div>
       </div>
-      <List />
+      <List isOpen={isOpen} />
     </div>
   );
 };
