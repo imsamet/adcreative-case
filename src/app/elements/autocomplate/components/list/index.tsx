@@ -35,16 +35,18 @@ const List: React.FC<Props> = ({ isOpen }) => {
   //   );
   // };
   return (
-    <div className={cn(styles.body, isOpen && styles.open)} onScroll={handleScroll}>
+    <div className="relative">
       <Loading isLoading={state.isLoading} />
-      {
-        //state.rickAndMortyList ? SelectsListRender() : <NotFound />
-      }
-      {state.rickAndMortyList ? (
-        state.rickAndMortyList?.results.map(i => <ListItem key={i.id} item={i} />)
-      ) : (
-        <NotFound />
-      )}
+      <div className={cn(styles.body, isOpen && styles.open)} onScroll={handleScroll}>
+        {
+          //state.rickAndMortyList ? SelectsListRender() : <NotFound />
+        }
+        {state.rickAndMortyList ? (
+          state.rickAndMortyList?.results.map(i => <ListItem key={i.id} item={i} />)
+        ) : (
+          <NotFound />
+        )}
+      </div>
     </div>
   );
 };

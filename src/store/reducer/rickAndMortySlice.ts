@@ -9,7 +9,7 @@ const initialState: RickAndMortyState = {
   rickAndMortyList: null,
   selected: [],
   query: '',
-  isLoading: false,
+  isLoading: true,
   error: null,
 };
 

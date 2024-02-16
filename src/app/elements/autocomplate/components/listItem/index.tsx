@@ -3,6 +3,7 @@ import { Props } from './core/_models';
 import styles from './core/style.module.css';
 import { useAppDispatch, useAppSelector } from '../../../../../hooks/useRedux';
 import { onSelect } from '../../../../../store/reducer/rickAndMortySlice';
+import { handleEnterKey } from '../../../../../core/_functions';
 
 const ListItem: React.FC<Props> = ({ item }) => {
   const { selected, query } = useAppSelector(state => state.rickAndMorty);
@@ -34,7 +35,12 @@ const ListItem: React.FC<Props> = ({ item }) => {
   };
   return (
     <div onClick={handleClickToggleItem} className={styles.container}>
-      <input className={styles.input} type="checkbox" checked={selected.some(i => item.id === i.id)} />
+      <input
+        onKeyUp={e => handleEnterKey(e, handleClickToggleItem)}
+        className={styles.input}
+        type="checkbox"
+        checked={selected.some(i => item.id === i.id)}
+      />
       <img src={item.image} className={styles.image} />
       <div className={styles.textBox}>
         <span className={styles.name}>{BoldRender()}</span>

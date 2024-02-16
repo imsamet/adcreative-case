@@ -4,12 +4,13 @@ import cn from 'classnames';
 import { Icons } from '../icons/icon';
 import { Props } from './core/_model';
 
-const Button: React.FC<Props> = ({ label, icon, className, ...props }) => {
+const Button: React.FC<Props> = ({ type, href, tabIndex, label, icon, className, ...props }) => {
+  const Tag = type;
   return (
-    <button className={cn(styles.button, className)} {...props}>
+    <Tag href={href} tabIndex={tabIndex} className={cn(styles.button, className)} {...props}>
       {label}
       {icon && <Icons className={styles.icon} name={icon} />}
-    </button>
+    </Tag>
   );
 };
 export default Button;

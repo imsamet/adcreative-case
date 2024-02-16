@@ -6,7 +6,7 @@ import { setDebouncedLoading, setQuery } from '../../../../../store/reducer/rick
 import getRickAndMortyList from '../../../../../store/actions/getRickAndMortyList';
 import { Props } from './core/_models';
 
-const SearchInput: React.FC<Props> = ({ setOpen }) => {
+const SearchInput: React.FC<Props> = ({ setOpen, tabIndex }) => {
   const dispatch = useAppDispatch();
 
   const debouncedSave = useCallback(
@@ -21,6 +21,6 @@ const SearchInput: React.FC<Props> = ({ setOpen }) => {
     dispatch(setDebouncedLoading());
     debouncedSave(e.target.value);
   };
-  return <input onChange={handleChange} className={styles.input} />;
+  return <input tabIndex={tabIndex} onChange={handleChange} className={styles.input} />;
 };
 export default SearchInput;

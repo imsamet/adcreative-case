@@ -24,17 +24,27 @@ const Navigation: React.FC<Props> = ({}) => {
             <Logos className={styles.logo} name="AdCreative" />
 
             <div className={styles.linkBox}>
-              <ADLink label="Home" to="/" />
-              <ADLink label="Dependencies" to="/dependencies" />
+              <ADLink tabIndex={1} label="Home" to="/" />
+              <ADLink tabIndex={2} label="Dependencies" to="/dependencies" />
             </div>
 
             <div className={styles.buttonBox}>
-              <a className="no-underline" href="tel:+905078340555">
-                <Button label="Call me" icon="Whatsapp" />
-              </a>
-              <a className="no-underline" href="mailto:imsametcetin@gmail.com">
-                <Button label="Send me email" icon="Airplane" />
-              </a>
+              <Button
+                type="a"
+                tabIndex={3}
+                className="no-underline"
+                href="tel:+905078340555"
+                label="Call me"
+                icon="Whatsapp"
+              />
+              <Button
+                type="a"
+                tabIndex={4}
+                className="no-underline"
+                href="mailto:imsametcetin@gmail.com"
+                label="Send me email"
+                icon="Airplane"
+              />
             </div>
           </div>
         </div>

@@ -17,10 +17,10 @@ const Autocomplate: React.FC = ({}) => {
     <div className={cn(styles.container)}>
       <div className={styles.head}>
         <div className={styles.selectList}>
-          {state.selected.map(i => (
-            <SelectItem key={i.id} id={i.id} label={i.name} />
+          {state.selected.map((i, key: number) => (
+            <SelectItem tabIndex={key + 5} key={i.id} id={i.id} label={i.name} />
           ))}
-          <SearchInput setOpen={setOpen} />
+          <SearchInput tabIndex={state.selected.length + 4} setOpen={setOpen} />
         </div>
         <div className={styles.toggleButton} onClick={toggle}>
           <Icons className={cn(styles.icon, isOpen && styles.open)} name="Down" />
