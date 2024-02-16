@@ -6,6 +6,19 @@
   overflow-y: scroll;
   box-sizing: border-box;
   transition: var(--delay);
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    display: none;
+  }
 }
 .open {
   max-height: 436px;
